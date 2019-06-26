@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby On Rails</title>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>    
+    <%= stylesheet_link_tag     "https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" %>    
+    <%= stylesheet_link_tag     "https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" %>    
+    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+
+  <body>
+    <aside id="left-panel" class="left-panel">
+        <%= render 'layouts/sidebar' %>
+    </aside>
+    <div id="right-panel" class="right-panel">
+        <%= render 'layouts/header' %>
+        <% flash.each do |key, value| %>
+            <div class="sufee-alert alert with-close alert-<%= key %> alert-dismissible fade show">
+                    <span class="badge badge-pill badge-<%= key %>"><%= key %></span>
+                      <%= value %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+          <% end %>
+        <%= render 'layouts/breadcrumbs' %>        
+        <div class="content">
+          <%= yield :css %>
+          <%= yield %>                
+        </div>
+        <%= render 'layouts/footer' %>
+    </div>
+      <%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js' %>
+      <%= yield :js %>
+  </body>
+</html>
