@@ -1,7 +1,7 @@
 <div class="login-content">
     <div class="login-logo">
         <a href="index.html">
-            <img class="align-content" src="images/logo.png" alt="">
+            <img class="align-content" src="<%= root_url %>/images/logo.png" alt="">
         </a>
     </div>    
     <div class="login-form">
@@ -22,7 +22,7 @@
                 <label>Password</label>
                 <%= password_field_tag :password, nil, class: "form-control", placeholder: "******" %>                
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label>Confirm Password</label>
                 <%= password_field_tag :password_confirmation, nil, class: "form-control", placeholder: "******" %>
             </div>
@@ -30,14 +30,14 @@
                 <label class="pull-right">
                     <a href="#">Forgotten Password?</a>
                 </label>
-            </div>
+            </div> -->
             <%= submit_tag 'Register', class:"btn btn-success btn-flat m-b-30 m-t-30" %>                        
-            <div class="social-login-content">
+            <!-- <div class="social-login-content">
                 <div class="social-button">
                     <button type="button" class="btn social facebook btn-flat btn-addon mb-3"><i class="ti-facebook"></i>Sign in with facebook</button>
                     <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i>Sign in with twitter</button>
                 </div>
-            </div>
+            </div> -->
             <div class="register-link m-t-15 text-center">
                 <p>Already have account ? <%= link_to "Sign In Here", login_path %></p>
             </div>
